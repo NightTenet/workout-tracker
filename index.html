@@ -7,15 +7,35 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- Шапка з назвою -->
+    <header>
+        <h1>Трекер тренувань</h1>
+    </header>
 
-    <!-- Форма додавання тренувань -->
+    <main>
+        <section id="add">
+            <h2>Додати тренування</h2>
+            <form>
+                <label for="workout-input">Введіть тренування</label>
+                <input type="text" id="workout-input" name="workout">
+            </form>
+        </section>
 
-    <!-- Список тренувань (історія за датами) -->
+        <section id="workout-history">
+            <h2>Історія тренувань</h2>
+            <article>
+                <h3>04.09.2026 Кросфіт</h3>
+            </article>
+        </section>
+    </main>
 
-    <!-- Блок статистики (кількість, час) -->
+    <aside>
+        <p>Кількість тренувань: ...</p>
+        <p>Загальний час тренувань: ...</p>
+    </aside>
 
-    <!-- Підвал -->
+    <footer>
+        <p>© 2026 Мусієнко Ігор.</p>
+    </footer>
 
     <script src="./js/app.js"></script>
 </body>
