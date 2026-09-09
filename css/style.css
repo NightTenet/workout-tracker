@@ -1,0 +1,70 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    line-height: 1.2;
+    background-color: #ffa500;
+    color: #000000;
+}
+
+header {
+    background-color: #000000;
+    padding: 16px;
+}
+
+h1 {
+    color: #ffa500;
+    font-size: 2.2rem;
+}
+
+main {
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 6px;
+}
+
+section {
+    margin-bottom: 16px;
+}
+
+form {
+    padding: 10px;
+    border: 2px dashed #000000;
+    border-radius: 6px;
+}
+
+.card {
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 16px 2px #000000;
+    margin-bottom: 10px;
+}
+
+.card h3::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-image: url("../assets/img/free-icon-dumbbell-3043888.png");
+    background-size: contain;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+aside {
+    background-color: #000000;
+    color: #ffa500;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+footer {
+    font-size: 0.8rem;
+    padding: 4px;
+    color: #1a1a1a;
+    text-align: center;
+}
