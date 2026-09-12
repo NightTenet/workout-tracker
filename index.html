@@ -11,30 +11,46 @@
         <h1>Трекер тренувань</h1>
     </header>
 
-    <main>
-        <section id="add">
-            <h2>Додати тренування</h2>
-            <form>
-                <label for="workout-input">Введіть тренування</label>
-                <input type="text" id="workout-input" name="workout">
-            </form>
-        </section>
-
-        <section id="workout-history">
-            <h2>Історія тренувань</h2>
-            <article class="card">
-                <h3>04.09.2026 Кросфіт</h3>
-            </article>
-            <article class="card">
-                <h3>09.09.2026 Кардіо</h3>
-            </article>
-        </section>
-    </main>
-
-    <aside>
-        <p>Кількість тренувань: ...</p>
-        <p>Загальний час тренувань: ...</p>
-    </aside>
+    <div class="grid-container">
+        <main>
+            <section id="add">
+                <h2>Додати тренування</h2>
+                <form>
+                    <label for="workout-input">Введіть тренування</label>
+                    <input type="text" id="workout-input" name="workout">
+                </form>
+            </section>
+    
+            <section id="workout-history">
+                <h2>Історія тренувань</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3>
+                            <img src="./assets/img/free-icon-dumbbell-3043888.png" alt="A wokrout icon">
+                            04.09.2026 Кросфіт
+                        </h3>
+                    </article>
+                    <article class="card">
+                        <h3>
+                            <img src="./assets/img/free-icon-dumbbell-3043888.png" alt="A wokrout icon">
+                            09.09.2026 Кардіо
+                        </h3>
+                    </article>
+                    <article class="card">
+                        <h3>
+                            <img src="./assets/img/free-icon-dumbbell-3043888.png" alt="A wokrout icon">
+                            11.09.2026 Фулбоді
+                        </h3>
+                    </article>
+                </div>
+            </section>
+        </main>
+    
+        <aside>
+            <p>Кількість тренувань: ...</p>
+            <p>Загальний час тренувань: ...</p>
+        </aside>
+    </div>
 
     <footer>
         <p>© 2026 Мусієнко Ігор.</p>

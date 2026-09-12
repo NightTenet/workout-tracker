@@ -12,6 +12,7 @@ body {
 }
 
 header {
+    display: flex;
     background-color: #000000;
     padding: 16px;
 }
@@ -22,8 +23,6 @@ h1 {
 }
 
 main {
-    max-width: fit-content;
-    margin: 0 auto;
     padding: 6px;
 }
 
@@ -37,22 +36,44 @@ form {
     border-radius: 6px;
 }
 
+.cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+}
+
+img { max-width: 100%; height: auto; }
+
+@media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 16px;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+
 .card {
     padding: 14px;
     border-radius: 10px;
     box-shadow: 6px 6px 16px 2px #000000;
-    margin-bottom: 10px;
 }
 
-.card h3::before {
-    content: "";
+img { max-width: 100%; height: auto; }
+
+h3 img {
+    display: inline-block;
     width: 32px;
     height: 32px;
-    display: inline-block;
-    background-image: url("../assets/img/free-icon-dumbbell-3043888.png");
-    background-size: contain;
-    margin-right: 12px;
     vertical-align: middle;
+    margin-right: 12px;
 }
 
 aside {
@@ -60,6 +81,7 @@ aside {
     color: #ffa500;
     font-size: 1.8rem;
     font-weight: 700;
+    padding: 10px;
 }
 
 footer {
