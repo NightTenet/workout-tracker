@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Трекер тренувань</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@600;700&display=swap"
+        rel="stylesheet">
 </head>
 <body>
     <header>
@@ -16,27 +18,28 @@
             <section id="add">
                 <h2>Додати тренування</h2>
                 <form>
-                    <label for="workout-input">Введіть тренування</label>
+                    <label for="workout-input">Введіть тренування:</label>
                     <input type="text" id="workout-input" name="workout">
+                    <button type="submit">Додати</button>
                 </form>
             </section>
     
             <section id="workout-history">
                 <h2>Історія тренувань</h2>
                 <div class="cards">
-                    <article class="card">
+                    <article class="card crossfit">
                         <h3>
                             <img src="./assets/img/free-icon-dumbbell-3043888.png" alt="A wokrout icon">
                             04.09.2026 Кросфіт
                         </h3>
                     </article>
-                    <article class="card">
+                    <article class="card cardio">
                         <h3>
                             <img src="./assets/img/free-icon-dumbbell-3043888.png" alt="A wokrout icon">
                             09.09.2026 Кардіо
                         </h3>
                     </article>
-                    <article class="card">
+                    <article class="card fullbody">
                         <h3>
                             <img src="./assets/img/free-icon-dumbbell-3043888.png" alt="A wokrout icon">
                             11.09.2026 Фулбоді
@@ -47,8 +50,25 @@
         </main>
     
         <aside>
-            <p>Кількість тренувань: ...</p>
-            <p>Загальний час тренувань: ...</p>
+            <h2>Мої досягнення</h2>
+
+            <div class="progress-block">
+                <label for="week-progress">Виконано 3 з 5 запланованих тренувань</label>
+                <progress id="week-progress" value="3" max="5">3 з 5</progress>
+            </div>
+
+            <div class="stat">
+                <p>Кількість тренувань:</p>
+                <strong>3</strong>
+            </div>
+            <div class="stat">
+                <p>Загальний час тренувань:</p>
+                <strong>2 год. 45 хв.</strong>
+            </div>
+            <div class="stat record">
+                <p class="record-label">Рекорд за тиждень</p>
+                <strong class="record-value">4 тренування</strong>
+            </div>
         </aside>
     </div>
 
