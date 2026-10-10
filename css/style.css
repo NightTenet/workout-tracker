@@ -69,7 +69,9 @@ button:hover {
     background-color: var(--color-dark);
 }
 
-input {
+input, select {
+    display: block;
+    margin: 8px 0;
     height: 44px;
     padding: 0 12px;
     font: inherit;
@@ -77,11 +79,6 @@ input {
     background-color: var(--color-surface);
     border: 2px solid var(--color-dark);
     border-radius: 6px;
-}
-
-form input, form label, form button {
-    vertical-align: middle;
-    margin: 0 4px 0 0;
 }
 
 input:focus-visible,
