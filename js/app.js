@@ -109,3 +109,70 @@ function caloriesPerMinute()
 // обробники подій обробляють значення "ккал/хв"
 caloriesInput.addEventListener('input', caloriesPerMinute);
 minutesInput.addEventListener('input', caloriesPerMinute);
+
+
+const refreshBtn = document.querySelector('#refresh-btn');
+const loadingMes = document.querySelector('#loading');
+const errorMes = document.querySelector('#error');
+function showLoading(isLoading)
+{
+    refreshBtn.disabled = isLoading;
+    loadingMes.hidden = !isLoading;
+}
+
+function showError(message)
+{
+    errorMes.textContent = message;
+    errorMes.hidden = false;
+}
+
+// ф-я робить запит по URL щоб отримати дані про вправи. Використаний API: JSONPlaceholder
+const API_URL = 'https://jsonplaceholder.typicode.com/todos?userId=4';
+async function loadData()
+{
+    showLoading(true);
+    errorMes.hidden = true; 
+    try
+    {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error(`Сервер відповів кодом ${response.status}`);
+        const data = await response.json();
+        console.log(data);
+        renderExercises(data);
+    }
+    catch (error)
+    {
+        if (error instanceof TypeError) showError('Журнал тренувань недоступний офлайн');
+        console.error(error);
+        exercisesList.innerHTML = '';
+    }
+    finally { showLoading(false); }
+}
+loadData();
+
+const exercisesList = document.querySelector('#exercises-list');
+function renderExercises(array)
+{
+    exercisesList.innerHTML = '';
+    for (const item of array)
+    {
+        const card = document.createElement('article');
+        const title = document.createElement('h3');
+        const status = document.createElement('p');
+        const image = document.createElement('img');
+
+        image.src = './assets/img/free-icon-dumbbell-3043888.png';
+        image.alt = 'A workout icon';
+
+        title.textContent = item.title;
+        title.prepend(image);
+        status.textContent = item.completed ? 'Виконано' : 'Не виконано';
+
+        card.classList.add('card');
+        if (item.completed) card.classList.add('fullbody'); // зелена смужка для виконаних
+
+        card.append(title, status);
+        exercisesList.append(card);
+    }
+}
+refreshBtn.addEventListener('click', loadData);
