@@ -111,6 +111,8 @@ caloriesInput.addEventListener('input', caloriesPerMinute);
 minutesInput.addEventListener('input', caloriesPerMinute);
 
 
+const exercisesList = document.querySelector('#exercises-list');
+
 const refreshBtn = document.querySelector('#refresh-btn');
 const loadingMes = document.querySelector('#loading');
 const errorMes = document.querySelector('#error');
@@ -143,6 +145,7 @@ async function loadData()
     catch (error)
     {
         if (error instanceof TypeError) showError('Журнал тренувань недоступний офлайн');
+        else showError('Не вдалося завантажити журнал тренувань.');
         console.error(error);
         exercisesList.innerHTML = '';
     }
@@ -150,10 +153,15 @@ async function loadData()
 }
 loadData();
 
-const exercisesList = document.querySelector('#exercises-list');
 function renderExercises(array)
 {
     exercisesList.innerHTML = '';
+
+    if (array.length === 0)
+    {
+        showError('Вправ не знайдено');
+        return;
+    }
     for (const item of array)
     {
         const card = document.createElement('article');
